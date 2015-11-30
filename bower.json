@@ -1,0 +1,21 @@
+{
+  "name": "mancala",
+  "homepage": "https://github.com/klhoffy/mancala",
+  "authors": [
+    "Kristin Hoffer <kristinlhoffer@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jQuery#~2.1.4"
+  }
+}
