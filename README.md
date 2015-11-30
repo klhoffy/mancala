@@ -1,5 +1,5 @@
 #Project 1: Mancala Game
-Description: Mancala is a two player game where each player tries to get as many stones into their mancala in order to win. The board is divided into two mancalas and six boxes for each player. The players move their stones into respective boxes to get them in their mancala. The game ends when one side of the board is free of stones and whomever has the most stones in their mancala wins.
+_Description:_ Mancala is a two player game where each player tries to get as many stones into their mancala in order to win. The board is divided into two mancalas and six boxes for each player. The players move their stones into respective boxes to get them in their mancala. The game ends when one side of the board is free of stones and whomever has the most stones in their mancala wins.
 ![Mancala Game Board](https://raw.githubusercontent.com/klhoffy/mancala/master/reference/mancala.png "Mancala Game Board")
 ##Site Map
 Add site map here
@@ -7,7 +7,7 @@ Add site map here
 ###Initial Game Play
 ![Initial Game Play](https://raw.githubusercontent.com/klhoffy/mancala/master/reference/mancala_WF01.png "Initial Game Play")
 
-The game starts with 4 stones in each box so each player starts with 24 stones. When they choose a box they must move each stone in that box to the next boxes. For instance if they start with 4 in box 2A then one stone will go into 3A, then 4A, then 5A and end in 6A. That will end their turn. This will continue until one player has cleared all their boxes.
+The game starts with 4 stones in each box so each player starts with 24 stones. When they choose a box they must move each stone in that box to the next boxes. For instance if they start with 4 in box 2A then one stone will go into 3A, then 4A, then 5A and end in 6A. That will end their turn. This will continue until one player has cleared all their boxes. The players stones can move into their opponents boxes and mancala.
 ###Player ends move in their Mancala
 ![End in Mancala Move 1](https://raw.githubusercontent.com/klhoffy/mancala/master/reference/mancala_WF02.png "End in Mancala Move 1")
 ![End in Mancala Move 2](https://raw.githubusercontent.com/klhoffy/mancala/master/reference/mancala_WF03.png "End in Mancala Move 2")
