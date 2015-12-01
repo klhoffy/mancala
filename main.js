@@ -1,81 +1,57 @@
 //$(document).ready() {
 
-
-	// var board = {
-	// 	box1A : 4,
-	// 	box2A : 4,
-	// 	box3A : 4,
-	// 	box4A : 4,
-	// 	box5A : 4,
-	// 	box6A : 4,
-	// 	box1B : 4,
-	// 	box2B : 4,
-	// 	box3B : 4,
-	// 	box4B : 4,
-	// 	box5B : 4,
-	// 	box6B : 4,
-	// 	mancalaA : 0,
-	// 	mancalaB : 0
-	// }
-
 	var board = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
-	var hole = []
-	var turnCount = 0
+	var playerOne = true;
+	var playerOne
+	
+	//var playerOne; //= board[0,1,2,3,4,5,6] //can only use these spots
+	//var playerTwo; //= board[7,8,9,10,11,12,13] //can only use these spots
+	// var players = ["playerOne", "playerTwo"]
 
-	//asssume box is board[x];
-
-
-// stones = value of board[x] = box
-// box = the value of the array in board
-// then change box = 0
-// should now make the value of the array in board to 0
-
+	// it finally works!
 	function play(box) { 
-		var stones = board[box];
-		console.log("stones" + stones);
-		// s = stones; 
-		// console.log(s)
-		for (var i = 0; i < box.length; i++) {
-			return board[box] +=1
-			console.log(box)
-		}
-
-		//board[box] = s * (board[box] += 1); 
-		console.log(board)
-		
-		//board[box] = 0;
-		//console.log("box" + box);
-		
-		//console.log(board)
-		
-		// for number of seeds = s {
-			//box[+1] += 1;
-			//... box[+s] += 1;
-		//}
-		
-	}
-	// doesn't work yet
-	function playerTurn() {
-		if (!this.innerHTML) {
-			if (turnCount % 2 === 0) {
-				// playerA turn
+		if (box === 6 || box === 13) {
+			alert("you cant take a stone from the mancala!")
+		} else {
+			var stones = board[box];
+			if (box === 0) { 
+				alert("there's nothing there")
 			} else {
-				// playerB turn
+				// if (playerOne = true) {
+				// 	board[box] = board[0] && board[1] && board[2] && board[3] && board[4] && board[5]
+				// } else {
+				// 	board[box] = board[7] && board[8] && board[9] && board[10] && board[11] && board[12]
+				// }
+				for (var i = 0; i <= stones; i++) {
+					board[(box + i) % 14] +=1
+				}
 			}
-		checkAllBoxes(false)
-		turnCount++
+			board[box] = 0;
+			console.log(board)
+			checkAllBoxes()
+			
 		}
+	}
+
+	// works
+	function playerTurn() {
+		playerOne = !playerOne
+		console.log(playerOne)
+		
 
 	}
 
 
-	//not working yet - need to tell it to go to the next person's turn - playerTurn()
+	// it works
 	function checkAllBoxes() {
 		if (board[0] === 0 && board[1] === 0 && board[2] === 0 && board[3] === 0 && board[4] === 0 && board[5] === 0) {
+			chooseWinner()
 			console.log("A cleared")
 		} else if (board[7] === 0 && board[8] === 0 && board[9] === 0 && board[10] === 0 && board[11] === 0 && board[12] === 0) {
+			chooseWinner()
 			console.log("B cleared")
 		} else {
+			playerTurn()
 			console.log("new player turn")
 		}
 	} 
@@ -91,6 +67,7 @@
 		}
 	}
 
+	// this works
 	function isOpposite(box) {
 		if (box === 0) {
 			console.log(board[12])
