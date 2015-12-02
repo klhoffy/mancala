@@ -1,8 +1,14 @@
 $(document).ready(function() {
 
-	//var boxes = document.getElementsByClassName("box")
+	var boxes = document.getElementsByClassName("box")
+	console.log(boxes)
 	var board = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
 	var playerOne = true;
+	var stoneImages = ["assets/images/Glassstone01.png", "assets/images/2Stones_Mancala.png", "assets/images/3Stones_Mancala.png", "assets/images/4Stones_Mancala.png", "assets/images/5Stones_Mancala.png", "assets/images/6Stones_Mancala.png", "assets/images/7Stones_Mancala.png", "assets/images/8Stones_Mancala.png", "assets/images/9Stones_Mancala.png", "assets/images/10Stones_Mancala.png", "assets/images/11Stones_Mancala.png"]
+
+	$(".btn").on("click", function() {
+		location.reload(true)
+	})
 
 	$("#box1A").on("click", function() {
 		play(0)
@@ -135,7 +141,7 @@ $(document).ready(function() {
 		} else {
 			console.log("tie")
 		}
-	}
+	} 
 
 	// function isOpposite(box) {
 	// 	if (board[box] === 0) {

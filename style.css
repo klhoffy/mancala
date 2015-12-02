@@ -9,7 +9,6 @@ h1 {
 .gameboard {
 	width: 950px;
 	height: 400px;
-	border: 1px solid black;
 	background-image: url("assets/images/Board.png");
 	background-size: 950px;
     background-repeat: no-repeat;
@@ -17,36 +16,51 @@ h1 {
 }
 
 #mancalaA, #mancalaB {
-	width: 110px;
-	height: 240px;
-	border: 1px solid black;
+	width: 83px;
+	height: 293px;
+	border-radius: 50px;
 	
 }
 
 #mancalaA{
-	margin: 80px 2px 0 19px;
+	margin: 58px 2px 0 27px;
 	float: left;
 }
 
 #mancalaB{
-	margin: 80px 12.5px 0 2px;
+	margin: 58px 27px 0 3px;
 	float: right;
 }
 
 .box {
 	width: 110px;
 	height: 110px;
-	border: 1px solid black;
 	float: left;
-	margin: 60px 2px 0 0;
+	margin: 60px 6.5px 0 0;
+	border-radius: 50%;
 
 }
 
 #box6A {
-	margin: 60px 6.5px 0 -2px;
+	margin: 60px 6.5px 0 10px;
 	background-repeat: no-repeat;
 }
 
-#box1B, #box2B, #box3B, #box4B, #box5B, #box6B {
-	margin-top: 70px;
+#box1B {
+	margin: 71px 0 0 9px;
 }
+
+#box6B, #box2B, #box3B, #box4B, #box5B {
+	margin: 71px 0 0 6.5px;
+}
+
+.btn {
+	margin: 30px 0;
+	text-align: center;
+}
+ button {
+ 	font-family: Helvetica;
+	font-size: 30px;
+	background-color: #8c604a;
+	color: white;
+ }
