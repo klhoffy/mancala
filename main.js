@@ -1,21 +1,74 @@
-//$(document).ready() {
+$(document).ready(function() {
 
-	var board = [4,4,2,4,0,4,0,4,4,4,4,4,4,0]
+	//var boxes = document.getElementsByClassName("box")
+	var board = [4,4,4,4,4,4,0,4,4,4,4,4,4,0]
 	var playerOne = true;
 
+	$("#box1A").on("click", function() {
+		play(0)
+	})
+	$("#box2A").on("click", function() { 
+		play(1)
+	})
+	$("#box3A").on("click", function() { 
+		play(2)
+	})
+	$("#box4A").on("click", function() { 
+		play(3)
+	})
+	$("#box5A").on("click", function() { 
+		play(4)
+	})
+	$("#box6A").on("click", function() { 
+		play(5)
+	})
+	$("#box1B").on("click", function() { 
+		play(7)
+	})
+	$("#box2B").on("click", function() { 
+		play(8)
+	})
+	$("#box3B").on("click", function() { 
+		play(9)
+	})
+	$("#box4B").on("click", function() { 
+		play(10)
+	})
+	$("#box5B").on("click", function() { 
+		play(11)
+	})
+	$("#box6B").on("click", function() { 
+		play(12)
+	})
+
+	$("#mancalaA").on("click", function() { 
+		play(6)
+	})
+	$("#mancalaB").on("click", function() { 
+		play(13)
+	})
+
+	//$(".box").on("click", play)
+
+	//for(var i = 0; i < boxes.length; i++) {
+	//boxes.addEventListener("click", play)
+	//}
+
 	function play(box) { 
+		//console.log(box)
 		if (playerOne && box < 6 && box > -1 ) {
-			if (box === 6 || box === 13) {
-				alert("you cant take a stone from the mancala!")
-			} else {
 				var stones = board[box];
 				if (board[box] === 0) { 
 					alert("there's nothing there")
+					playerOne = false;
 				} else {
 					for (var i = 0; i <= stones; i++) {
 						board[(box + i) % 14] +=1
-						if (box + i + stones === 6) {
+						if (board[i] + 1 === 6) {
 						playerOne = false
+						} else {
+							playerOne = true
+						}
 						// } else if (board[box + i] + stones === 1) {
 						// 	isOpposite()
 						// 	console.log(box)
@@ -25,26 +78,33 @@
 				board[box] = 0;
 				console.log(board)
 				checkAllBoxes()	
-			} 
+			
 		} else if (!playerOne && box < 13 && box > 6 ) {
-			if (box === 6 || box === 13) {
-				alert("you cant take a stone from the mancala!")
-			} else {
+			// if (box === 6 || box === 13) {
+			// 	alert("you cant take a stone from the mancala!")
+			// } else {
 				var stones = board[box];
 				if (board[box] === 0) { 
 					alert("there's nothing there")
+					playerOne = true
 				} else {
 					for (var i = 0; i <= stones; i++) {
 						board[(box + i) % 14] +=1
-						if (box + i + stones === 13) {
+						if (board[i] + 1 === 13) {
 						playerOne = true
+						} else {
+							playerOne = false
 						}
 					}
 				}
 				board[box] = 0;
 				console.log(board)
 				checkAllBoxes()
-			}
+			
+		} else if (box === 6 || box === 13) {
+			alert("you cant take a stone from the mancala!")
+		} else {
+			alert("thats not your box")
 		}
 	}
 
@@ -95,4 +155,4 @@
 	// }
 
 
-//}
+})
