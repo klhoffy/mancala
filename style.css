@@ -32,6 +32,21 @@ h1 {
 	float: right;
 }
 
+/*#box1A {
+	border: 1px solid black;
+	float: right;
+	width: 110px;
+	height: 110px;
+
+}
+
+#box2A {
+	border: 1px solid black;
+	float: right;
+	width: 110px;
+	height: 110px;
+
+}*/
 .box {
 	width: 110px;
 	height: 110px;
@@ -51,7 +66,7 @@ h1 {
 }
 
 #box6B, #box2B, #box3B, #box4B, #box5B {
-	margin: 71px 0 0 6.5px;
+	margin: 71px 0 0 7.5px;
 }
 
 .btn {
@@ -63,4 +78,8 @@ h1 {
 	font-size: 30px;
 	background-color: #8c604a;
 	color: white;
+ }
+
+ img {
+ 	margin: auto;
  }
