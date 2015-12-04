@@ -9,83 +9,83 @@ var stoneImagesMancala = ["assets/images/0Stones_Mancala.png", "assets/images/Gl
 
 
 $(".btn").on("click", function() {
-	gameInit()
+	gameRefresh()
 })
 
-function gameInit() {
+function gameRefresh() {
 	for (var i = 0; i < board.length; i++) {
 		getImages(i)
 	}
 }
 
 boxes[0].addEventListener("click", function() {
-	var x = board[0]
-	getImages(x)
+	//var x = board[0]
+	
 	play(0)
 })
 boxes[1].addEventListener("click", function() {
-	var x = board[1]
-	getImages(x) 
+	//var x = board[1]
+	//gameRefresh()
 	play(1)
 })
 boxes[2].addEventListener("click", function() { 
-	var x = board[2]
-	getImages(x)
+	//var x = board[2]
+	//gameRefresh()
 	play(2)
 })
 boxes[3].addEventListener("click", function() { 
-	var x = board[3]
-	getImages(x)
+	//var x = board[3]
+	//gameRefresh()
 	play(3)
 })
 boxes[4].addEventListener("click", function() { 
-	var x = board[4]
-	getImages(x)
+	//var x = board[4]
+	//gameRefresh()
 	play(4)
 })
 boxes[5].addEventListener("click", function() { 
-	var x = board[5]
-	getImages(x)
+	//ar x = board[5]
+	//gameRefresh()
 	play(5)
 })
 boxes[7].addEventListener("click", function() { 
-	var x = board[7]
-	getImages(x)
+	//var x = board[7]
+	//gameRefresh()
 	play(7)
 })
 boxes[8].addEventListener("click", function() { 
-	var x = board[8]
-	getImages(x)
+	//var x = board[8]
+	//gameRefresh()
 	play(8)
 })
 boxes[9].addEventListener("click", function() { 
-	var x = board[9]
-	getImages(9)
+	//var x = board[9]
+	//gameRefresh()
 	play(9)
 })
 boxes[10].addEventListener("click", function() { 
-	var x = board[10]
-	getImages(x)
+	//var x = board[10]
+	//gameRefresh()
 	play(10)
 })
 boxes[11].addEventListener("click", function() { 
-	var x = board[11]
-	getImages(x)
+	//var x = board[11]
+	//gameRefresh()
 	play(11)
 })
 boxes[12].addEventListener("click", function() {
-	var x = board[12]
-	getImages(x) 
+	//var x = board[12]
+	//gameRefresh()
 	play(12)
 })
 boxes[6].addEventListener("click", function() {
-	var x = board[6]
-	getImagesManacala(x)
+	//var x = board[6]
+	//gameRefresh()
 	play(6)
 })
 boxes[13].addEventListener("click", function() { 
-	var x = board[13]
-	getImagesManacala(x)
+	//var x = board[13]
+	//gameRefresh()
 	play(13)
 })
 
@@ -174,7 +174,9 @@ function play(box) {
 				}
 			}
 			board[box] = 0;
-			checkAllBoxes()	
+			checkAllBoxes()
+			gameRefresh()	
+			
 	} else if (!playerOne && box < 13 && box > 6 ) {
 			var stones = board[box];
 			if (stones === 0) { 
@@ -190,9 +192,11 @@ function play(box) {
 					}
 				}
 			}
-			stones = 0;
+			board[box] = 0;
 			console.log(board)
 			checkAllBoxes()
+			gameRefresh()
+			
 		
 	} else if (box === 6 || box === 13) {
 		alert("you cant take a stone from the mancala!")
